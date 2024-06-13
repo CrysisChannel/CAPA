@@ -1,0 +1,53 @@
+import { useRef } from "react";
+import { audioData } from "../../types/type";
+import useDurationToElem from "../../hooks/audio/useDurationToElem";
+import { pause, play } from "./AudioControl";
+
+export default function AudioPlayer({ audioData }: { audioData: audioData }){
+    const audio = useRef<HTMLAudioElement>(null);
+    const input = useRef<HTMLInputElement>(null);
+    const duration = useRef<HTMLSpanElement>(null);
+    const onCanPlay = useDurationToElem(duration);
+    function onTimeUpdate(){
+        if(!input.current || !audio.current){
+            console.log('otu error');
+            return;
+        }
+        input.current.value = audio.current.currentTime.toString();
+    }
+    function onChange(){
+        if(!input.current || !audio.current){
+            console.log('otu error');
+            return;
+        }
+        audio.current.currentTime = Number(input.current.value);
+    }
+    return (
+        <section>
+            <div id="audio-player">
+                <div>
+                    <input 
+                    type="range" 
+                    ref={input}
+                    onChange={onChange}
+                    max={}
+                    onMouseDown={() => pause(audio)}
+                    onMouseUp={() => play(audio)} />
+                </div>
+                <div>
+                    <audio
+                    src={audioData.src}
+                    ref={audio}
+                    onCanPlay={onCanPlay}
+                    onTimeUpdate={onTimeUpdate}
+                    />
+                </div>
+            </div>
+            <div id="audio-info">
+                <h1 id="title">{audioData.title}</h1>
+                <p id="author">{audioData.author}</p>
+                <span id="duration" ref={duration}></span>
+            </div>
+        </section>
+    );
+}

@@ -1,0 +1,32 @@
+.audioListItem {
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vh;
+    color: #fff;
+    align-items: center;
+    height: 18.5vw;
+    width: 18.5vw;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4822303921568627) 100%);
+}
+.audioList {
+    position: relative;
+    z-index: 20;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 2vh;
+    padding-top: 17vh;
+    padding-left: 21.5vw;
+    width: 100%;
+} 
+.title {
+    margin: 0;
+    font-size: 2vw;
+}
+.author {
+    font-size: 1.5vw;
+}
+.duration {
+    font-size: 1.5vw;
+}
