@@ -10,6 +10,8 @@ import Decadence from '../music/Disturbed - Decadence.mp3';
 import BloodAndThunder from '../music/Mastodon - Blood And Thunder.mp3';
 import YouMustFollow from '../music/Stratus - You Must Follow.mp3';
 import BrokenSword from '../music/Thinktank - Broken Sword.mp3';
+import TheStainsOfTime from '../music/MGRR OST - The Stains of Time.mp3';
+import CCE from '../music/MGRR OST - Collective Consciousness Extended.mp3';
 
 //import img
 import CannibalCorpse from '../musicImg/CannibalCorpse.jpg';
@@ -88,6 +90,20 @@ const musicData: audioData[] = [
         author: "Thinktank",
         src: BrokenSword,
         img: NFSMW
+    },
+    {
+        id: 11,
+        title: "The Stains Of Time",
+        author: "MGRR OST",
+        src: TheStainsOfTime,
+        img: MGR
+    },
+    {
+        id: 12,
+        title: "Collective Consciousness(Extended)",
+        author: "MGRR OST",
+        src: CCE,
+        img: MGR
     },
     
 ]
